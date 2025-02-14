@@ -1,3 +1,47 @@
+# String Compressor
+
+## Program Logic
+
+This program compresses a given string by replacing consecutive occurrences of characters with the character followed by its count. If the compressed version is not shorter than the original string, the original string is returned instead.
+
+### Steps:
+1. **Initialize Variables**  
+   - Store the input string.  
+   - Use a list to store compressed parts.  
+   - Track the current character and its count.
+
+2. **Iterate Through the String**  
+   - If the next character matches the current one, increase the count.  
+   - If it differs, append the current character and count to the list, then reset tracking for the new character.
+
+3. **Finalize the Compressed String**  
+   - Append the last tracked character and count.  
+   - Join the list into a final compressed string.  
+   - Return the compressed string only if it's shorter than the original; otherwise, return the original.
+
+***
+# First Non-Repeating Character Finder
+
+## Program Logic
+
+This program identifies the first non-repeating character in a given string. If all characters repeat, it returns `-1`.
+
+### Steps:
+1. **Initialize Variables**  
+   - Store the input string.  
+   - Use a dictionary to count occurrences of each character.
+
+2. **Count Character Occurrences**  
+   - Iterate through the string and update character counts.
+
+3. **Find the First Unique Character**  
+   - Iterate through the string again.  
+   - Return the first character with a count of `1`.
+
+4. **Return `-1` If No Unique Character Exists**  
+
+---
+
 # Task Manager API
 
 This is a Django-based Task Manager API that allows users to perform CRUD operations on tasks. The API supports user authentication using JWT tokens and provides endpoints for user signup, login, and task management.
@@ -17,27 +61,32 @@ This is a Django-based Task Manager API that allows users to perform CRUD operat
     ```sh
     git clone https://github.com/justinnonso05/SkillsForge-task-manager-api
     ```
+2. Move to the working directory for the Task Manager API:
 
-2. Create a virtual environment and activate it:
+    ```sh
+    cd TaskManager
+    ```
+
+3. Create a virtual environment and activate it:
 
     ```sh
     python -m venv venv
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
     ```
 
-3. Install the dependencies:
+4. Install the dependencies:
 
     ```sh
     pip install -r requirements.txt
     ```
 
-4. Apply the migrations:
+5. Apply the migrations:
 
     ```sh
     python manage.py migrate
     ```
 
-5. Run the development server:
+6. Run the development server:
 
     ```sh
     python manage.py runserver
