@@ -59,7 +59,7 @@ This is a Django-based Task Manager API that allows users to perform CRUD operat
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/justinnonso05/SkillsForge-task-manager-api
+    git clone https://github.com/justinnonso05/SkillsForge.git
     ```
 2. Move to the working directory for the Task Manager API:
 
