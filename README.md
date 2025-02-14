@@ -44,7 +44,8 @@ This program identifies the first non-repeating character in a given string. If 
 
 # Task Manager API
 
-This is a Django-based Task Manager API that allows users to perform CRUD operations on tasks. The API supports user authentication using JWT tokens and provides endpoints for user signup, login, and task management.
+This is a Django-based Task Manager API that allows users to perform CRUD operations on tasks.<br>
+The TaskManager API provides a comprehensive set of endpoints for user authentication and task management. It ensures secure access to protected endpoints using JWT authentication and offers features like pagination, filtering, and search to enhance the user experience. The API is designed to handle common task management operations efficiently while providing detailed error handling and informative responses.
 
 
 ## Features
@@ -67,7 +68,7 @@ This is a Django-based Task Manager API that allows users to perform CRUD operat
     cd TaskManager
     ```
 
-3. Create a virtual environment and activate it:
+3. Create a virtual environment and activate it(Optional):
 
     ```sh
     python -m venv venv
@@ -122,8 +123,11 @@ The API uses JWT tokens for authentication. To access the protected endpoints, y
 
 ### Example
 
-1. **Login** to get the JWT token:
+1. **sign up** and **Login** to get the JWT token:
 
+    ```sh
+    curl -X POST http://localhost:8000/auth/signup/ -d "username=yourusername&password=yourpassword"
+    ```
     ```sh
     curl -X POST http://localhost:8000/auth/login/ -d "username=yourusername&password=yourpassword"
     ```
@@ -165,7 +169,8 @@ Paste it in the authorization section at the top section of the Swagger UI
 ![image](https://github.com/user-attachments/assets/94387731-53fc-4168-991d-501caa21d3ce)
 
 
-After authorizing, you can now access the protected task management endpoints of the API 
+After authorizing, you can now access the protected task management endpoints of the API<br>
+
 ![image](https://github.com/user-attachments/assets/83f5c140-f2ec-4561-af77-151de4279959)
 
 Testing the ```/api/tasks/list``` endpoint. The fields for the query parameters are provided on the UI
@@ -175,4 +180,10 @@ Video playback
 
 https://github.com/user-attachments/assets/16ae00bb-83dc-485e-bfa4-6383cd548e31
 
+### Note:<br>
+Date Format Details<br>
+- The `due_date` and `created_at` follows the ISO 8601 standard, which is used in APIs for date-time representation.
+- `YYYY-MM-DDTHH:MM:SSZ` (UTC time)<br>
+- Example: `2025-02-15T14:30:00Z` represents February 15, 2025, at 14:30 UTC<br>
+- The Z indicates Zulu time (UTC)
 
